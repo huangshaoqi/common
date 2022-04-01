@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func GetConsulConfig(host string,port int64,prefix string)(config.Config,error) {
+func GetConsulConfig(host string, port int64, prefix string) (config.Config, error) {
 
 	source := consul.NewSource(
 		consul.WithAddress(host+":"+strconv.FormatInt(port, 10)),
@@ -15,12 +15,12 @@ func GetConsulConfig(host string,port int64,prefix string)(config.Config,error) 
 	)
 	newConfig, err := config.NewConfig()
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
 	err = newConfig.Load(source)
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
 
-	return newConfig,nil
+	return newConfig, nil
 }
