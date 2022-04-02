@@ -13,7 +13,6 @@ require (
 )
 
 require (
-	github.com/HdrHistogram/hdrhistogram-go v1.1.2 // indirect
 	github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc // indirect
 	github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf // indirect
 	github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da // indirect

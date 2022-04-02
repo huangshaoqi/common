@@ -1,10 +1,11 @@
 package common
 
 import (
-	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/prometheus/common/log"
 	"net/http"
 	"strconv"
+
+	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/prometheus/common/log"
 )
 
 func PrometheusBoot(port int) {
