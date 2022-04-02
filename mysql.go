@@ -1,8 +1,8 @@
 package common
 
 import (
-	"github.com/micro/micro/v3/service/config"
-	log "github.com/micro/micro/v3/service/logger"
+	"github.com/asim/go-micro/v3/config"
+	log "github.com/asim/go-micro/v3/logger"
 )
 
 type MysqlConfig struct {
@@ -15,13 +15,7 @@ type MysqlConfig struct {
 
 func GetMysqlFromConsul(config config.Config, path string) *MysqlConfig {
 	mysqlConfig := &MysqlConfig{}
-	val, err := config.Get(path)
-	if err != nil {
-		log.Error(err)
-		return nil
-	}
-
-	err = val.Scan(mysqlConfig)
+	err := config.Get(path).Scan(mysqlConfig)
 	if err != nil {
 		log.Error(err)
 		return nil
